@@ -18,12 +18,18 @@ let startGame = () => {
   if (computerChoice < 0.33) {
     computerChoice = rock
     console.log('rock')
-}
+  } else if (computerChoice <= 0.66) {
+    computerChoice = paper
+    console.log('paper')
+  } else {
+    computerChoice = scissors
+    console.log('scissors')
+  }
 }
 
 rock.addEventListener('click', startGame)
-// scissors.addEventListener('click', test2)
-// paper.addEventListener('click', test3)
+scissors.addEventListener('click', startGame)
+paper.addEventListener('click', startGame)
 
 
 // document.addEventListener('click', startGame)
