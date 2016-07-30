@@ -1,6 +1,6 @@
 let userChoice = ''
 let computerChoice = ''
-
+let compare = ''
 const initialize = () => {
   document.querySelector('.output').textContent = 'Choose Rock, Paper, or Scissors'
 }
@@ -16,20 +16,22 @@ let paper = document.querySelector('.input button.paper')
 let startGame = () => {
   computerChoice = Math.random()
   if (computerChoice < 0.33) {
-    computerChoice = rock
+    computerChoice = 'rock'
     console.log('rock')
   } else if (computerChoice <= 0.66) {
-    computerChoice = paper
+    computerChoice = 'paper'
     console.log('paper')
   } else {
-    computerChoice = scissors
+    computerChoice = 'scissors'
     console.log('scissors')
   }
+  document.querySelector('h1').textContent= 'I chose...' + computerChoice
 }
 
 rock.addEventListener('click', startGame)
 scissors.addEventListener('click', startGame)
 paper.addEventListener('click', startGame)
+
 
 
 // document.addEventListener('click', startGame)
