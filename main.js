@@ -1,52 +1,30 @@
-const possibleThrows = ['Rock', 'Paper', 'Scissors']
- let userChoice = ''
- let computerChoice = ''
+let userChoice = ''
+let computerChoice = ''
 
-const init = function() {
-    document.querySelector('.output').textContent = 'Let\'s Play!'
-    let rock = document.querySelector('.rock')
-    let paper = document.querySelector('.paper')
-    let scissors = document.querySelector('.scissors')
+const initialize = () => {
+  document.querySelector('.output').textContent = 'Choose Rock, Paper, or Scissors'
+}
 
-Rock.addEventListener('click', function() {
-    userChoice = 'Rock'
-    begin(userChoice)
-  }
+document.addEventListener('DOMContentLoaded', initialize)
 
-/paper.addEventListener('click', function() {
-     userChoice = 'Paper'
-     begin(userChoice)
-  }
-/scissors.addEventListener('click', function() {
-     userChoice = 'Scissors'
-     begin(userChoice)
-  }
+let rock = document.querySelector('.input button.rock')
+console.log(rock)
 
-document.addEventListener('DOMContentLoaded', init)
+let scissors = document.querySelector('.input button.scissors')
+console.log(scissors)
 
-let compare = function(choice1, choice2){
-  if(choice1 === choice2){
-    return 'TIE!'
-  }if (choice1 === 'scissors') {
-    if (choice2 === 'paper') {
-      return 'scissors wins' // log this to the scoreboard
-    }else {
-      return 'paper wins' // log this to the scoreboard
-    }else if (choice1 === 'paper'){
-      if (choice2 === 'rock') {
-        return 'paper wins' // log this to the scoreboard
-      }else {
-        return 'rock wins' // log this to the scoreboard
-      }else if (choice1 === 'rock') {
-        if (choice2 === 'scissors'){
-          return 'rock wins' // log this to the scoreboard
-        }else {
-          return 'scissors wins'// log this to the scoreboard
-        }
-      }
-    }
-compare(userChoice, computerChoice)
+let paper = document.querySelector('.input button.paper')
+console.log(paper)
 
+let test = () => {
+  alert('Working')
+}
+rock.addEventListener('click', test)
+scissors.addEventListener('click', test)
+paper.addEventListener('click', test)
 
-
-//document.addEventListener('DOMContentLoaded', init)
+// document.addEventListener('click', startGame)
+//
+// let startGame = () => {
+//   document.querySelector('.input').button = userChoice
+// }
