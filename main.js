@@ -1,6 +1,6 @@
 let userChoice = ''
 let computerChoice = ''
-let compare = ''
+
 const initialize = () => {
   document.querySelector('.output').textContent = 'Choose Rock, Paper, or Scissors'
 }
@@ -18,53 +18,49 @@ let startGame = () => {
   if (computerChoice < 0.33) {
     computerChoice = 'rock'
     console.log('rock')
-  } else if (computerChoice <= 0.66) {
+  } else if (computerChoice <= 0.64) {
     computerChoice = 'paper'
     console.log('paper')
   } else {
     computerChoice = 'scissors'
     console.log('scissors')
   }
-  document.querySelector('h1').textContent= 'I chose...' + computerChoice
+  document.querySelector('h1').textContent = 'I chose...' + computerChoice
+  compare(userChoice, computerChoice)
+}
+let compare = (choice1, choice2) => {
+  if (choice1 === choice2) {
+    document.querySelector('.output').textContent = 'Great Minds Think Alike'
+  } if (choice1 === 'scissors') {
+    if (choice2 === 'paper') {
+      document.querySelector('.output').textContent = 'You Win...This Time.'
+    } else {
+      document.querySelector('.output').textContent = 'You Lose.'
+    }
+  } else if (choice1 === 'paper') {
+    if (choice2 === 'rock') {
+      document.querySelector('.output').textContent = 'You Win...This Time.'
+    } else {
+      document.querySelector('.output').textContent = 'You Lose.'
+    }
+  } else if (choice1 === 'rock') {
+    if (choice2 === 'scissors') {
+      document.querySelector('.output').textContent = 'You Win...This Time.'
+    } else {
+      document.querySelector('.output').textContent = 'You Lose.'
+    }
+  }
 }
 
-rock.addEventListener('click', startGame)
-scissors.addEventListener('click', startGame)
-paper.addEventListener('click', startGame)
-
-
-
-// document.addEventListener('click', startGame)
-//
-// let startGame = () => {
-//   document.querySelector('.input').button = userChoice
-// }
-
-// <input>
-// <button class="es">Click 1 for Spanish</button>
-// <button class="en">Click 2 for English</button>
-
-// <script>
-//   let language = ''
-//   const greet = function(){
-//     let heading = document.querySelector('h1')
-//     let nameInput = document.querySelector('input')
-//     let word = ''
-//     if(language === 'English'){
-//       word = 'Hello, '
-//     } else {
-//       word = 'Hola, '
-//     }
-//     heading.innerText = word + nameInput.value
-//   }
-//   let englishButton = document.querySelector('.en')
-//   englishButton.addEventListener('click', function(){
-//     language = 'English'
-//     greet()
-//   })
-//   let spanishButton = document.querySelector('.es')
-//   spanishButton.addEventListener('click', function(){
-//     language = 'Spanish'
-//     greet()
-//   })
-// </script>
+rock.addEventListener('click', function () {
+  userChoice = 'rock'
+  startGame()
+})
+scissors.addEventListener('click', function () {
+  userChoice = 'scissors'
+  startGame()
+})
+paper.addEventListener('click', function () {
+  userChoice = 'paper'
+  startGame()
+})
